@@ -1,0 +1,2 @@
+# study-bud
+django tutorial
