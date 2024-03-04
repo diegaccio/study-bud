@@ -1,8 +1,15 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 
+rooms = [
+    {'id':1, 'name':'Lets learn python!'},
+    {'id':2, 'name':'Design'},
+    {'id':3, 'name':'Front end dev'},
+]
+
 def home(request):
-    return HttpResponse('Home page')
+    context = {'rooms': rooms}
+    return render(request, 'home.html', context)
 
 def room(request):
-    return HttpResponse('ROOM')
+    return render(request, 'room.html')
