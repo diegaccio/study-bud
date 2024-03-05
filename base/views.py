@@ -11,5 +11,10 @@ def home(request):
     context = {'rooms': rooms}
     return render(request, 'home.html', context)
 
-def room(request):
-    return render(request, 'room.html')
+def room(request, pk):
+    room = None
+    for r in rooms:
+        if r['id'] == int(pk):
+            room = r
+    context = {'room': room}
+    return render(request, 'room.html', context)
